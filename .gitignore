@@ -1,0 +1,10 @@
+# Ressources
+learnopengl.pdf
+
+# OpenGL OS-specific files
+glfw-3.4
+compile_commands.json
+glad.c
+
+# Executables
+main
