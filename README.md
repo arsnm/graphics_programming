@@ -12,5 +12,35 @@ to take anything from it if you dare to do so.
 > Not at all definitive
 
 - [ ] Discovering graphics programming basic through OpenGL
-- ...TBD
+- [ ] ...TBD
 - [ ] FINAL OBJECTIVE ?????? (apparently its hard) : having a basic understanding of how Vulkan API works.
+
+## BUILD/INSTALL
+
+To compile any of the program in this, there's a few things to do.
+This setup is appropriate for a **text editor + make setup**.
+
+The programs on this repo are intended to run on **OpenGL 3.3** (eventually higher),
+and use the *core-profile* of the API.
+
+The library used to create windows and rendering things on the screen
+is [GLFW](https://glfw.org). To run the programs you need to download
+glfw (either prebuilt-binaries, or the [source code](https://github.com/glfw/glfw/releases/download/3.4/glfw-3.4.zip) and compiling it 
+(the latter is recommended)).
+
+### Glad setup
+
+To link OpenGL functions declaration with there actual implementations, one
+could choose to do it manually, or to use (as intended in this repo) to use the GLAD()
+open source library. Then, just add the `glad.c` file to the root folder of any program,
+and don't forget to include the `glad/include` directory to your favorite's compiler include
+path.
+
+### Clangd support
+
+If you want to use the *clangd* language server, you can ask CMake to create a compile_commands.json,
+in order to have the right links/definitions to the librairies used :
+cmake :
+```sh
+    cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .
+```
