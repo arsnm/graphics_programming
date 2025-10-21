@@ -40,7 +40,17 @@ path.
 
 If you want to use the *clangd* language server, you can ask CMake to create a compile_commands.json,
 in order to have the right links/definitions to the librairies used :
-cmake :
+
 ```sh
-    cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .
+cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .
 ```
+
+## Ressources
+
+This repository contains a lot of programs inspired/taught by the [LearnOpenGL Online Book](https://learopengl.com),
+do not hesitate to have a look at the book, and to eventually support the author Joey de Vries.
+
+> [!WARNING]
+> Even though the repo itself is under [The Unlicense](./LICENSE), since a lot of code is from the [LearnOpenGL Online Book](https://learopengl.com),
+> I'm not the owner of all the copyrights on this repository. Thus make sure to comply with the book's license before taking anything
+> from it.
