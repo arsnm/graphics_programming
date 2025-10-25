@@ -1,7 +1,13 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -O2 -Wall -Wextra
+CC  = gcc
 
-SRC = shader_sources.cpp glad.c main.cpp
+CXXFLAGS = -std=c++17 -O2 -Wall -Wextra
+CFLAGS   = -O2 -Wall -Wextra
+
+SRC_CPP = shader_sources.cpp main.cpp
+SRC_C   = glad.c
+OBJS    = $(SRC_CPP:.cpp=.o) $(SRC_C:.c=.o)
+
 TARGET = main
 SHADERS = shader.vert shader.frag
 
@@ -20,12 +26,18 @@ ifeq ($(UNAME_S),Darwin)
     SYS_LIBS = -framework Cocoa -framework OpenGL -framework IOKit -framework CoreVideo
 endif
 
-# Build
+# Build rules
 all: $(TARGET)
 
-$(TARGET): $(SRC)
-	$(CXX) $(CXXFLAGS) -I$(GLFW_INCLUDE) $^ $(GLFW_LIB) $(SYS_LIBS) -o $@
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) -I$(GLFW_INCLUDE) $(OBJS) $(GLFW_LIB) $(SYS_LIBS) -o $@
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -I$(GLFW_INCLUDE) -c $< -o $@
+
+%.o: %.c
+	$(CC) $(CFLAGS) -I$(GLFW_INCLUDE) -c $< -o $@
 
 clean:
-	rm -f $(TARGET)
+	rm -f $(TARGET) $(OBJS)
 
