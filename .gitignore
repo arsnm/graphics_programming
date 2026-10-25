@@ -2,7 +2,7 @@
 learnopengl.pdf
 
 # OpenGL OS-specific files
-glfw-3.4
+glfw-*
 compile_commands.json
 glad.c
 

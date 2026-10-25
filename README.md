@@ -27,9 +27,8 @@ higher), and use the *core-profile* of the API.
 
 The library used to create windows and rendering things on the screen is
 [GLFW](https://glfw.org). To run the programs you need to download glfw (either
-prebuilt-binaries, or the [source
-code](https://github.com/glfw/glfw/releases/download/3.4/glfw-3.4.zip) and
-compiling it  (the latter is recommended)).
+prebuilt-binaries, or the [source code](https://github.com/glfw/glfw/releases/)
+and compiling it  (the latter is recommended)).
 
 ### Glad setup
 

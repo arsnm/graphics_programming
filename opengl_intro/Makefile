@@ -15,14 +15,14 @@ SHADERS = shader.vert shader.frag
 UNAME_S := $(shell uname -s)
 
 ifeq ($(UNAME_S),Linux)
-    GLFW_INCLUDE = ../glfw-3.4/include
-    GLFW_LIB = ../glfw-3.4/build/src/libglfw3.a
+    GLFW_INCLUDE = ../glfw-3.5.1/include
+    GLFW_LIB = ../glfw-3.5.1/build/src/libglfw3.a
     SYS_LIBS = -ldl -lm -lGL -lpthread -lwayland-client -lwayland-cursor -lxkbcommon
 endif
 
 ifeq ($(UNAME_S),Darwin)
-    GLFW_INCLUDE = ../glfw-3.4/include
-    GLFW_LIB = ../glfw-3.4/build/src/libglfw3.a
+    GLFW_INCLUDE = ../glfw-3.5.1/include
+    GLFW_LIB = ../glfw-3.5.1/build/src/libglfw3.a
     SYS_LIBS = -framework Cocoa -framework OpenGL -framework IOKit -framework CoreVideo
 endif
 
